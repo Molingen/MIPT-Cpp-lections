@@ -51,15 +51,14 @@ public:
 
 class Derived : public Base {
 public:
-	void show(int x) {
-		std::cout << "Derived show with int: " << x << std::endl;
+	void show() {
+		std::cout << "Derived show" << std::endl;
 	}
 };
 
 int main() {
 	Derived d;
-	d.show(5); // Вызовет Derived::show(int)
-	d.show(); // Ошибка: метод Base::show() скрыт
+	d.show(); // Вызовет Derived::show(int)
 	d.Base::show(); // Явный вызов метода базового класса
 	return 0;
 }
@@ -103,7 +102,7 @@ int main() {
 
 ---
 
-### Тонкости запретов при public-наследовании от класса с private-наследованием
+### Тонкости запретов при public-наследовании от класса с private-наследованием 
 
 ```cpp
 struct Granny {
