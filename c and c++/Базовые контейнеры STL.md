@@ -53,7 +53,7 @@ public:
 		}
 		
 		traits::deallocate(arr, capacity);		
-		rr = newArr;
+		arr = newArr;
 		capacity <<= 1; // *=2
 		++size;
 	}
@@ -87,7 +87,7 @@ private:
 	size_t size; // сколько используется
 	size_t capacity; // сколько эл-тов выделено
 	Alloc alloc;
-	using traits = allocator_traits<Alloc>;
+	using traits = std::allocator_traits<Alloc>;
 }
 ```
 
